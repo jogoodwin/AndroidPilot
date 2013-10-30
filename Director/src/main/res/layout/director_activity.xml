@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:orientation="vertical">
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        >
+
+        <!-- Lat/Lon Text -->
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Start navigator"
+                android:id="@+id/startNavigator"
+                android:layout_marginRight="0dp"
+                android:layout_weight="1"
+                android:layout_column="0"
+                style="buttonBarButtonStyle"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                style="buttonBarButtonStyle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Set new location"
+                android:id="@+id/recordLocation"
+                android:layout_marginRight="0dp"
+                android:layout_column="0"
+                android:layout_weight="1"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            style="buttonBarStyle">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Set arrow north"
+                android:id="@+id/northReset"
+                android:singleLine="false"
+                android:layout_column="0"
+                style="buttonBarButtonStyle"
+                android:layout_weight="1"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            style="buttonBarStyle">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Stop navigator"
+                android:id="@+id/stopNavigator"
+                android:layout_column="0"
+                style="buttonBarButtonStyle"
+                android:layout_weight="1"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/tableRow">
+
+            <TextView
+                android:id="@+id/txtArduino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Arduino data:"
+                android:textStyle="bold"
+                android:textColor="#FF00FF00"
+                android:textSize="12sp"
+                android:paddingTop="0dip"
+                android:layout_weight="1"
+                android:layout_column="0"
+                android:focusableInTouchMode="false" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView android:id="@+id/gpsLocationCompass" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="Lat: n/a\nLon: n/a"
+                android:textStyle="bold" android:textColor="#FF00FF00"
+                android:textSize="12sp"
+                android:paddingTop="0dip"
+                android:layout_weight="1"
+                android:layout_column="0"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:id="@+id/Angle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Angle: n/a"
+                android:textStyle="bold"
+                android:textColor="#FF00FF00"
+                android:textSize="12sp"
+                android:paddingTop="0dip"
+                android:layout_weight="0"
+                android:layout_column="0"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:id="@+id/distanceFromSet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lat(m): n/a; Lon(m): n/a; Dist(m): n/a;"
+                android:textStyle="bold"
+                android:textColor="#FF00FF00"
+                android:textSize="12sp"
+                android:paddingTop="0dip"
+                android:layout_gravity="left|center_vertical"
+                android:layout_weight="0"
+                android:layout_column="0"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:id="@+id/remainPos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Positions remaining:"
+                android:textStyle="bold"
+                android:textColor="#FF00FF00"
+                android:textSize="12sp"
+                android:paddingTop="0dip"
+                android:layout_gravity="left|center_vertical"
+                android:layout_weight="0"
+                android:singleLine="true"
+                android:layout_column="0"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/compass"
+                android:src="@drawable/green_arrow"
+                android:layout_gravity="center"
+                android:minHeight="300dp"
+                android:minWidth="350dp"
+                android:layout_weight="1"
+                android:layout_column="0"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:text="Distance from waypoint sensitivity(m): n/a"
+                android:id="@+id/distBufferValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <SeekBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/destBufferSensitivity"
+                android:focusableInTouchMode="false"
+                android:progress="20"
+                android:longClickable="false"
+                android:layout_column="0"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:id="@+id/leftServoVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Servo 2(L Neg) pulse width = "
+                android:textStyle="bold"
+                android:textColor="#FF00FF00"
+                android:textSize="12sp"
+                android:paddingTop="0dip"
+                android:layout_gravity="left|center_vertical"
+                android:layout_weight="0"
+                android:singleLine="false"
+                android:layout_column="0"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:focusableInTouchMode="false">
+
+            <TextView
+                android:id="@+id/rightServoVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Servo 2(R Neg) pulse width = "
+                android:textStyle="bold"
+                android:textColor="#FF00FF00"
+                android:textSize="12sp"
+                android:paddingTop="0dip"
+                android:layout_gravity="left|center_vertical"
+                android:layout_weight="0"
+                android:singleLine="false"
+                android:layout_column="0"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reverse Left Servo"
+                android:id="@+id/revLeftServo"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reverse Right Servo"
+                android:id="@+id/revRightServo"
+                />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned"
+                android:ems="0"
+                android:id="@+id/pitchSet"
+                android:visibility="visible"
+                android:alpha="0.5"
+                android:singleLine="false"
+                android:autoText="false"
+                android:clickable="false"
+                android:hint="pitch (deg)" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            >
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="0"
+                android:id="@+id/pitchTol"
+                android:visibility="visible"
+                android:alpha="0.5"
+                android:singleLine="false"
+                android:hint="pitch tolerance (deg)" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            >
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="0"
+                android:id="@+id/waitConst"
+                android:visibility="visible"
+                android:alpha="0.5"
+                android:singleLine="false"
+                android:hint="respond slower constant" />
+        </TableRow>
+
+    </TableLayout>
+</ScrollView>

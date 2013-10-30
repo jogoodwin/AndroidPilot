@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/backgroundcolor">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="75px"
+        android:layoutDirection="rtl"
+        android:background="@color/titlebackgroundcolor">
+        <TextView android:id="@+id/customtitlebar"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="@string/dragPolyline"
+            android:textSize="20dp"
+            android:textColor="@color/titletextcolor"
+            android:textStyle="normal"
+            android:padding="10px"
+            android:layout_alignParentLeft="true"/>
+        <ImageView android:id="@+id/exitProfileImage"
+            android:layout_width="75px"
+            android:layout_height="75px"
+            android:src="@drawable/ic_launcher"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/the_map"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:name="com.google.android.gms.maps.MapFragment"
+    map:cameraTilt="45"
+    map:cameraZoom="14"
+    />
+
+ </LinearLayout>
+
